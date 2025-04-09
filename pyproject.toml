@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "jogo-bruno-ricardo"
+version = "0.1.0"
+description = ""
+authors = ["= <victorsturnichcapel@gmail.com>"]
+readme = "README.md"
+packages = [{include = "jogo_bruno_ricardo"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pygame = "^2.6.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
