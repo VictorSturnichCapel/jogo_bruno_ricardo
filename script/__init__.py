@@ -5,7 +5,7 @@ import sys
 pygame.init()
 WIDTH, HEIGHT = 900, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Ball Toss Game")
+pygame.display.set_caption("Ricardo e Bruno - Jogo")
 clock = pygame.time.Clock()
 font = pygame.font.SysFont(None, 48)
 
@@ -16,9 +16,11 @@ BLACK = (0, 0, 0)
 # Load assets
 player1_img = pygame.image.load("C:/Users/victo/Documents/jogo_bruno_ricardo/src/player1.png").convert_alpha()
 player2_img = pygame.image.load("C:/Users/victo/Documents/jogo_bruno_ricardo/src/player2.png").convert_alpha()
-player1_img = pygame.transform.scale(player1_img, (80, 100))
-player2_img = pygame.transform.scale(player2_img, (80, 100))
+#player1_img = pygame.transform.scale(player1_img, (80, 100)) 
+#player2_img = pygame.transform.scale(player2_img, (80, 100))
 hit_sound = pygame.mixer.Sound("C:/Users/victo/Documents/jogo_bruno_ricardo/src/hit.wav")
+background_img = pygame.image.load("C:/Users/victo/Documents/jogo_bruno_ricardo/src/minecraft.png").convert()
+background_img = pygame.transform.scale(background_img, (WIDTH, HEIGHT))
 
 # Players
 player1 = pygame.Rect(100, HEIGHT//2 - 50, 80, 100)
@@ -37,7 +39,7 @@ pygame.time.set_timer(pygame.USEREVENT, 1000)
 # Cooldowns
 last_shot1 = 0
 last_shot2 = 0
-COOLDOWN = 1500  # 2 seconds in milliseconds
+COOLDOWN = 1100  # 1.1 seconds in milliseconds
 
 # Buttons
 restart_button = pygame.Rect(WIDTH//2 - 100, HEIGHT//2 + 50, 200, 60)
@@ -61,7 +63,7 @@ def reset_game():
 running = True
 while running:
     clock.tick(60)
-    screen.fill(WHITE)
+    screen.blit(background_img, (0, 0))
     current_time = pygame.time.get_ticks()
 
     for event in pygame.event.get():
