@@ -1,5 +1,10 @@
 import pygame
 import sys
+import os
+
+# Get the directory of the currently executing file
+current_directory = os.getcwd()
+current_directory = current_directory.replace("\\", "/")
 
 # Init
 pygame.init()
@@ -14,12 +19,12 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 # Load assets
-player1_img = pygame.image.load("C:/Users/victo/Documents/jogo_bruno_ricardo/src/player1.png").convert_alpha()
-player2_img = pygame.image.load("C:/Users/victo/Documents/jogo_bruno_ricardo/src/player2.png").convert_alpha()
+player1_img = pygame.image.load(f"{current_directory}/src/player1.png").convert_alpha()
+player2_img = pygame.image.load(f"{current_directory}/src/player2.png").convert_alpha()
 #player1_img = pygame.transform.scale(player1_img, (80, 100)) 
 #player2_img = pygame.transform.scale(player2_img, (80, 100))
-hit_sound = pygame.mixer.Sound("C:/Users/victo/Documents/jogo_bruno_ricardo/src/hit.wav")
-background_img = pygame.image.load("C:/Users/victo/Documents/jogo_bruno_ricardo/src/minecraft.png").convert()
+hit_sound = pygame.mixer.Sound(f"{current_directory}/src/hit.wav")
+background_img = pygame.image.load(f"{current_directory}/src/minecraft.png").convert()
 background_img = pygame.transform.scale(background_img, (WIDTH, HEIGHT))
 
 # Players
