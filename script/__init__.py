@@ -135,18 +135,18 @@ while running:
 
     # Draw HUD
     draw_text(f"{score1} - {score2}", 48, BLACK, WIDTH // 2, 40)
-    draw_text(f"Time: {timer}", 36, BLACK, WIDTH // 2, 80)
+    draw_text(f"Tempo: {timer}", 36, BLACK, WIDTH // 2, 80)
 
     if game_over:
-        result = "Draw!"
+        result = "Empatou!"
         if score1 > score2:
-            result = "Player 1 Wins!"
+            result = "Ricardinho ganhou!"
         elif score2 > score1:
-            result = "Player 2 Wins!"
-        draw_text("Game Over!", 64, BLACK, WIDTH // 2, HEIGHT // 2 - 60)
+            result = "Bruninho ganhou!"
+        draw_text("Jogo acabou!", 64, BLACK, WIDTH // 2, HEIGHT // 2 - 60)
         draw_text(result, 48, BLACK, WIDTH // 2, HEIGHT // 2 - 10)
         pygame.draw.rect(screen, (200, 200, 200), restart_button)
-        draw_text("Play Again", 36, BLACK, restart_button.centerx, restart_button.centery)
+        draw_text("Jogo acabou", 36, BLACK, restart_button.centerx, restart_button.centery)
 
     pygame.display.flip()
 
