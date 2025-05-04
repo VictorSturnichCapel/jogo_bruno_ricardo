@@ -110,13 +110,13 @@ while running:
         # Ball movement and collision
         for ball in balls[:]:
             if ball[0] == "left":
-                ball[1].x += 8
+                ball[1].x += 10
                 if ball[1].colliderect(player2):
                     balls.remove(ball)
                     score1 += 1
                     hit_sound.play()
             else:
-                ball[1].x -= 8
+                ball[1].x -= 10
                 if ball[1].colliderect(player1):
                     balls.remove(ball)
                     score2 += 1
